@@ -11,6 +11,9 @@ COPY *.json /app/
 RUN npm install
 # Install react-scripts globally
 RUN npm install react-scripts@5.0.1 -g
+
+RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
+
 # Copy the application code
 COPY . /app/
 
